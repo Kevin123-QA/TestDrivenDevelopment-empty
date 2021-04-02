@@ -28,7 +28,14 @@ public class Questions {
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
 	public String multiChar(String input) {
-		return "";
+		String[] array = input.split("", 0);
+		String out = "";
+		for (String a : array) {
+			String b = a + a + a;
+			out += b;
+		}
+
+		return out;
 	}
 
 	/**
@@ -45,7 +52,20 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-		return "";
+
+		String a = sandwich.toLowerCase();
+		int b = a.split("bread").length;
+		String out = "";
+		if (b < 2) {
+			out = "";
+		} else {
+			int firstbread = a.indexOf("bread") + 4;
+			int lastbread = a.lastIndexOf("bread") -1;
+			for (int i = lastbread; i > firstbread; i--) {
+				out = out +sandwich.charAt(i);
+			}
+		}
+		return out;
 	}
 
 	/**
@@ -61,7 +81,34 @@ public class Questions {
 	 * evenlySpaced(4, 60, 9) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
+		int big;
+		int middle;
+		int small;
+
+		if (a > b) {
+			big = a;
+			middle = b;
+		} else {
+			big = b;
+			middle = a;
+		}
+		if (c > big) { // c>a>b
+			small = middle;
+			middle = big;
+			big = c;
+
+		} else if (c > middle) {// a>c>b
+			small = middle;
+			middle = c;
+		} else {
+			small = c;
+		}
+		if (big - middle == middle - small  )
+			return true;
+		else {
+			return false;
+		}
+
 	}
 
 	/**
@@ -76,7 +123,7 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
-    	return "";
+		return "";
 	}
 
 	/**
@@ -92,7 +139,7 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
-    	return false;
+		return false;
 	}
 
 	/**
@@ -107,7 +154,7 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
-    	return -1;
+		return -1;
 	}
 
 	/**
@@ -123,7 +170,7 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-    	return -1;
+		return -1;
 	}
 
 	/**
@@ -138,7 +185,7 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-    	return "";
+		return "";
 	}
 
 	/**
@@ -162,7 +209,7 @@ public class Questions {
 	 */
 
 	public int largest(String input) {
-    	return -1;
+		return -1;
 	}
 
 	/**
@@ -179,6 +226,6 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
-    	return false;
+		return false;
 	}
 }
