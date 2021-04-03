@@ -60,9 +60,9 @@ public class Questions {
 			out = "";
 		} else {
 			int firstbread = a.indexOf("bread") + 4;
-			int lastbread = a.lastIndexOf("bread") -1;
+			int lastbread = a.lastIndexOf("bread") - 1;
 			for (int i = lastbread; i > firstbread; i--) {
-				out = out +sandwich.charAt(i);
+				out = out + sandwich.charAt(i);
 			}
 		}
 		return out;
@@ -92,18 +92,18 @@ public class Questions {
 			big = b;
 			middle = a;
 		}
-		if (c > big) { // c>a>b
+		if (c > big) { // c>a>b or c>b>a
 			small = middle;
 			middle = big;
 			big = c;
 
-		} else if (c > middle) {// a>c>b
+		} else if (c > middle) {// a>c>b or b>c>a
 			small = middle;
 			middle = c;
 		} else {
-			small = c;
+			small = c; // a>b>c or b>a>c
 		}
-		if (big - middle == middle - small  )
+		if (big - middle == middle - small)
 			return true;
 		else {
 			return false;
@@ -123,7 +123,28 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
-		return "";
+		String newword = "";
+		if (n % 2 == 0) {
+			System.out.println("input n must be odd number");
+		} else {
+			int inputlength = input.length();
+			int middle = inputlength / 2;
+			int removechar = n / 2;
+
+			if (n >= 2) {
+				int left = middle - removechar;
+				int right = middle + removechar;
+				String left_mid = input.substring(0, left);
+				String mid_right = input.substring(right, inputlength);
+				return newword = left_mid + mid_right;
+			} else {
+				String left_mid = input.substring(0, middle - 1);
+				String mid_right = input.substring(middle + 1, inputlength);
+				return newword = left_mid + mid_right;
+
+			}
+		}
+		return newword;
 	}
 
 	/**
@@ -139,7 +160,11 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
-		return false;
+
+		String a = input.toLowerCase();
+
+		return (a.endsWith("java"));
+
 	}
 
 	/**
