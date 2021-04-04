@@ -124,28 +124,34 @@ public class Questions {
 	 */
 	public String nMid(String input, int n) {
 		String newword = "";
-		if (n % 2 == 0) {
-			System.out.println("input n must be odd number");
-		} else {
+		
 			int inputlength = input.length();
-			int middle = inputlength / 2;
+			//System.out.println(inputlength);
+			int middle = (inputlength/2);
+			//System.out.println(middle);
 			int removechar = n / 2;
+			//System.out.println(removechar);
 
 			if (n >= 2) {
 				int left = middle - removechar;
 				int right = middle + removechar;
 				String left_mid = input.substring(0, left);
-				String mid_right = input.substring(right, inputlength);
+				String mid_right = input.substring(right+1, inputlength);
+				System.out.print(left_mid);
+				System.out.println(mid_right);
 				return newword = left_mid + mid_right;
 			} else {
-				String left_mid = input.substring(0, middle - 1);
+				String left_mid = input.substring(0, middle );
 				String mid_right = input.substring(middle + 1, inputlength);
+				System.out.println(left_mid);
+				System.out.println(mid_right);
 				return newword = left_mid + mid_right;
 
-			}
-		}
-		return newword;
-	}
+			
+		
+		
+	}}
+	
 
 	/**
 	 * Given a string, return the boolean True if it ends in "java" and False if
