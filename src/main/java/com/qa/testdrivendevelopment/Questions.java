@@ -124,34 +124,31 @@ public class Questions {
 	 */
 	public String nMid(String input, int n) {
 		String newword = "";
-		
-			int inputlength = input.length();
-			//System.out.println(inputlength);
-			int middle = (inputlength/2);
-			//System.out.println(middle);
-			int removechar = n / 2;
-			//System.out.println(removechar);
 
-			if (n >= 2) {
-				int left = middle - removechar;
-				int right = middle + removechar;
-				String left_mid = input.substring(0, left);
-				String mid_right = input.substring(right+1, inputlength);
-				System.out.print(left_mid);
-				System.out.println(mid_right);
-				return newword = left_mid + mid_right;
-			} else {
-				String left_mid = input.substring(0, middle );
-				String mid_right = input.substring(middle + 1, inputlength);
-				System.out.println(left_mid);
-				System.out.println(mid_right);
-				return newword = left_mid + mid_right;
+		int inputlength = input.length();
+		// System.out.println(inputlength);
+		int middle = (inputlength / 2);
+		// System.out.println(middle);
+		int removechar = n / 2;
+		// System.out.println(removechar);
 
-			
-		
-		
-	}}
-	
+		if (n >= 2) {
+			int left = middle - removechar;
+			int right = middle + removechar;
+			String left_mid = input.substring(0, left);
+			String mid_right = input.substring(right + 1, inputlength);
+			System.out.print(left_mid);
+			System.out.println(mid_right);
+			return newword = left_mid + mid_right;
+		} else {
+			String left_mid = input.substring(0, middle);
+			String mid_right = input.substring(middle + 1, inputlength);
+			System.out.println(left_mid);
+			System.out.println(mid_right);
+			return newword = left_mid + mid_right;
+
+		}
+	}
 
 	/**
 	 * Given a string, return the boolean True if it ends in "java" and False if
@@ -216,7 +213,29 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-		return "";
+		String out = "";
+
+		if (number %5==0) {
+
+			if (number %3==0) {
+				out = "fizzbuzz";
+			}
+
+			else {
+				out = "buzz";
+			}
+
+		}
+
+		else if (number %3==0) {
+			out = "fizz";
+		}
+
+		else {
+			out = "null";
+		}
+
+		return out;
 	}
 
 	/**
