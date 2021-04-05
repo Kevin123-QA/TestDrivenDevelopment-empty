@@ -30,6 +30,7 @@ public class Questions {
 	public String multiChar(String input) {
 		String[] array = input.split("", 0);
 		String out = "";
+
 		for (String a : array) {
 			String b = a + a + a;
 			out += b;
@@ -137,14 +138,14 @@ public class Questions {
 			int right = middle + removechar;
 			String left_mid = input.substring(0, left);
 			String mid_right = input.substring(right + 1, inputlength);
-			System.out.print(left_mid);
-			System.out.println(mid_right);
+		//	System.out.print(left_mid);
+		//	System.out.println(mid_right);
 			return newword = left_mid + mid_right;
 		} else {
 			String left_mid = input.substring(0, middle);
 			String mid_right = input.substring(middle + 1, inputlength);
-			System.out.println(left_mid);
-			System.out.println(mid_right);
+		//	System.out.println(left_mid);
+			//System.out.println(mid_right);
 			return newword = left_mid + mid_right;
 
 		}
@@ -215,9 +216,9 @@ public class Questions {
 	public String fizzBuzz(int number) {
 		String out = "";
 
-		if (number %5==0) {
+		if (number % 5 == 0) {
 
-			if (number %3==0) {
+			if (number % 3 == 0) {
 				out = "fizzbuzz";
 			}
 
@@ -227,7 +228,7 @@ public class Questions {
 
 		}
 
-		else if (number %3==0) {
+		else if (number % 3 == 0) {
 			out = "fizz";
 		}
 
@@ -276,6 +277,17 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
-		return false;
-	}
-}
+		if (index > word.length()) {
+			return false;}
+		else {
+		String a = word;
+		System.out.println(a.charAt(index-1)== letter);
+		return word.charAt(index-1)== letter;
+		}
+				
+				
+		}}
+	
+
+	
+
